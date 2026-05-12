@@ -7,9 +7,7 @@ ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 
 echo "==> Installing Homebrew packages"
 
-brew install stow
-brew install bat
-brew install nvm
+brew install stow bat nvm tree-sitter-cli
 
 echo "==> Installing Oh My Zsh plugins/themes"
 
