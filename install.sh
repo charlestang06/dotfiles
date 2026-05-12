@@ -46,5 +46,6 @@ echo "==> Creating symlinks with stow"
 cd "$DOTFILES"
 
 stow zsh
+stow nvim
 
 echo "==> Done"
