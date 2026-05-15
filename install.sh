@@ -192,10 +192,6 @@ install_shared_tools() {
   log "Installing shared shell tools"
   clone_or_update_repo "https://github.com/sindresorhus/pure.git" "$HOME/.zsh/pure"
   clone_or_update_repo "https://github.com/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
-
-  if [ "$PROFILE" != "server" ] && [ "$MINIMAL" = false ]; then
-    clone_or_update_repo "https://github.com/bradleyboy/claude-skills.git" "$HOME/.claude/skills"
-  fi
 }
 
 install_fzf() {
@@ -274,6 +270,7 @@ install_optional_typescript() {
 link_dotfiles() {
   log "Creating symlinks with stow"
   cd "$DOTFILES"
+  stow agents
   stow zsh
   stow nvim
 }

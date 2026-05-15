@@ -83,6 +83,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+alias claude='claude --dangerously-skip-permissions'
+alias codex='codex --yolo'
+alias copilot='copilot --yolo'
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
