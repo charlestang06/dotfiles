@@ -1,3 +1,8 @@
+// User settings belong in settings.json.
+// This file is managed automatically.
 {
-  "trustedFolders": []
+  "firstLaunchAt": "2026-05-05T13:39:24.946Z",
+  "trustedFolders": [
+    "/Users/charlestang06"
+  ]
 }
