@@ -180,6 +180,25 @@ install_base_packages() {
   done
 }
 
+install_oh_my_zsh() {
+  if [ -d "$HOME/.oh-my-zsh/.git" ]; then
+    return
+  fi
+
+  log "Installing Oh My Zsh"
+  if [ -d "$HOME/.oh-my-zsh" ]; then
+    git -C "$HOME/.oh-my-zsh" init -q
+    if ! git -C "$HOME/.oh-my-zsh" remote add origin "https://github.com/ohmyzsh/ohmyzsh.git" 2>/dev/null; then
+      git -C "$HOME/.oh-my-zsh" remote set-url origin "https://github.com/ohmyzsh/ohmyzsh.git"
+    fi
+    git -C "$HOME/.oh-my-zsh" fetch --depth=1 origin master
+    git -C "$HOME/.oh-my-zsh" checkout -f -B master FETCH_HEAD
+    return
+  fi
+
+  clone_or_update_repo "https://github.com/ohmyzsh/ohmyzsh.git" "$HOME/.oh-my-zsh" "1"
+}
+
 install_oh_my_zsh_plugins() {
   log "Installing Oh My Zsh plugins/themes"
   clone_or_update_repo "https://github.com/romkatv/powerlevel10k.git" "$ZSH_CUSTOM/themes/powerlevel10k" "1"
@@ -280,6 +299,7 @@ main() {
   detect_platform
 
   install_base_packages
+  install_oh_my_zsh
   install_oh_my_zsh_plugins
   install_shared_tools
 

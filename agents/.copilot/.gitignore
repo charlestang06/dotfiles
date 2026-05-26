@@ -1,0 +1,6 @@
+# Copilot temp/state files
+command-history-state.json
+permissions-config.json
+logs/
+session-state/
+session-store.db*

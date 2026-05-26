@@ -42,7 +42,7 @@ Personal/work/server dotfiles for shell, terminal, and AI agent CLI tooling, ins
 ## How it works
 
 1. Detects platform (`brew` on macOS, `apt` on Ubuntu) and profile.
-2. Installs packages and clones/upgrades plugin repos.
+2. Installs packages, ensures Oh My Zsh is present, and clones/upgrades plugin repos.
 3. Runs optional installs based on profile/flags.
 4. Uses `stow` to symlink:
    - `zsh/` -> shell config (`.zshrc`, `.zprofile`)
